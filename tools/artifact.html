@@ -1,0 +1,25 @@
+<title>Celebrate Prototype v3</title>
+<meta name="robots" content="noindex">
+<style>
+  /* One phone, centred. Phones: the prototype fills the screen. */
+  :root { --bg: #ece8e3; --bezel: #141110; --shadow: rgba(20, 17, 16, .28); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1c1a19; --bezel: #000; --shadow: rgba(0, 0, 0, .6); color-scheme: dark } }
+  :root[data-theme="dark"] { --bg: #1c1a19; --bezel: #000; --shadow: rgba(0, 0, 0, .6); color-scheme: dark }
+  html, body { height: 100%; }
+  body { background: var(--bg); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .phone { flex: none; width: 390px; height: 844px; border-radius: 44px; overflow: hidden;
+           box-shadow: 0 0 0 10px var(--bezel), 0 30px 80px var(--shadow); transform-origin: center; }
+  .phone iframe { width: 100%; height: 100%; border: 0; display: block; }
+  @media (max-width: 600px) {
+    .phone { width: 100%; height: 100%; border-radius: 0; box-shadow: none; transform: none !important; }
+  }
+</style>
+<div class="phone" id="phone"><iframe src="V3-LM2-ob-00E.dc.html" title="Celebrate Prototyp"></iframe></div>
+<script>
+  function fit() {
+    if (innerWidth <= 600) return;
+    var s = Math.min(1, (innerHeight - 60) / 864, (innerWidth - 40) / 410);
+    document.getElementById('phone').style.transform = 'scale(' + s + ')';
+  }
+  addEventListener('resize', fit); fit();
+</script>

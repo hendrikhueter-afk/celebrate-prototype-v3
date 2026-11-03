@@ -1,0 +1,16 @@
+{
+  "canvas_url": "https://claude.ai/artifact/TZp8siF3kauXiB33QC3MrD",
+  "canvas_page_id": "page-proto-v3",
+  "artifact_url": "",
+  "site_url": "https://hendrikhueter-afk.github.io/celebrate-prototype-v3/",
+  "start_screen": "V3-LM2-ob-00E.dc.html",
+  "screen_width": 390,
+  "min_height_default": 640,
+  "min_height": {
+    "V3-LM2-ob-00E.dc.html": 790,
+    "V3-LM2-S2.dc.html": 780,
+    "V3-LM2-ob-02.dc.html": 740,
+    "V3-LM2-ob-wait.dc.html": 700,
+    "V3-LM2-B2c.dc.html": 700
+  }
+}

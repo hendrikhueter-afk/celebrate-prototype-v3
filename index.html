@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Celebrate</title>
+<script>
+  // Phones open the prototype full screen; larger screens get a phone frame.
+  if (Math.min(screen.width, screen.height) < 600) location.replace('V3-LM2-ob-00E.dc.html');
+</script>
+<style>
+  :root { --bg: #ece8e3; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1c1a19; } }
+  html, body { margin: 0; height: 100%; background: var(--bg); }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .phone { width: 390px; height: 844px; border-radius: 44px; overflow: hidden;
+           box-shadow: 0 0 0 10px #111, 0 30px 80px rgba(0,0,0,.35);
+           transform-origin: center; }
+  iframe { width: 390px; height: 844px; border: 0; display: block; }
+</style>
+</head>
+<body>
+<div class="phone" id="phone"><iframe src="V3-LM2-ob-00E.dc.html" title="Celebrate Prototyp"></iframe></div>
+<script>
+  function fit() {
+    const s = Math.min(1, (innerHeight - 60) / 864, (innerWidth - 40) / 410);
+    document.getElementById('phone').style.transform = 'scale(' + s + ')';
+  }
+  addEventListener('resize', fit); fit();
+</script>
+</body>
+</html>
