@@ -105,7 +105,7 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.state = { n: Math.max(0, Math.min(5, parseInt(props.typed || 0, 10) || 0)), open: true };
     this.__init = Object.assign({}, this.state); }
   renderVals() {
-    const name = 'Jonas'; const n = this.state.n; const done = n >= name.length && !this.state.open;
+    const name = 'Lukas'; const n = this.state.n; const done = n >= name.length && !this.state.open;
     const shown = name.slice(0, n);
     return {
       name: shown, ph: shown ? '' : 'Vorname', phColor: shown ? '#3F1A20' : '#8A6F74',
