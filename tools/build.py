@@ -58,6 +58,8 @@ def main():
     for b in boards:
         src = os.path.join(raw, "project", b)
         if not os.path.exists(src):
+            if "--list" in sys.argv:
+                continue  # listing may run before the screens are downloaded
             sys.exit("Missing download: project/%s" % b)
         blobs |= set(BLOB.findall(open(src).read()))
 
