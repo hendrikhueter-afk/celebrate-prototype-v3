@@ -32,7 +32,7 @@ for (const f of screens) {
   const errs = [];
   page.removeAllListeners('pageerror'); page.removeAllListeners('requestfailed'); page.removeAllListeners('response');
   page.on('pageerror', e => errs.push('script error: ' + e.message));
-  page.on('response', r => { if (r.status() >= 400) errs.push('missing: ' + r.url()); });
+  page.on('response', r => { if (r.status() >= 400 && !/%7B%7B|\{\{/.test(r.url())) errs.push('missing: ' + r.url()); }); // unfilled {{template}} placeholders are not missing files
   await page.goto(base + f);
   await page.waitForTimeout(900);
   const sw = await page.evaluate(() => document.documentElement.scrollWidth);

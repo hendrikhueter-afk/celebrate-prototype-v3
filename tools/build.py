@@ -16,6 +16,7 @@ import glob, json, os, re, shutil, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CFG = json.load(open(os.path.join(REPO, "tools", "config.json")))
 BLOB = re.compile(r"/_blob/([a-f0-9]{32})")
+BARE = re.compile(r"(?<![a-zA-Z0-9/._-])([a-f0-9]{32})(?![a-zA-Z0-9._-])")
 
 
 def page_boards(raw):
@@ -85,6 +86,10 @@ def main():
     for b in boards:
         s = open(os.path.join(raw, "project", b)).read()
         s = BLOB.sub(lambda m: "img/" + img_name[m.group(1)], s)
+        # runtime data may hold bare image ids filled into src="/_blob/{{x}}" templates:
+        # point the template at img/ and give every bare id its file name
+        s = s.replace('"/_blob/{{', '"img/{{').replace("'/_blob/{{", "'img/{{")
+        s = BARE.sub(lambda m: img_name[m.group(1)] if m.group(1) in img_name else m.group(0), s)
         if "<title>" in s:
             s = re.sub(r"<title>.*?</title>", lambda m: head_block(CFG["min_height"].get(b, CFG["min_height_default"])), s, count=1, flags=re.S)
         else:
