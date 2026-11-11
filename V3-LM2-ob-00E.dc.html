@@ -132,7 +132,7 @@ class Component extends DCLogic {
     try { let w = window.innerWidth; window.addEventListener('resize', function () { const nw = window.innerWidth; if (w === 0 && nw > 0) reset(); w = nw; }); } catch (e) {}
     try { window.addEventListener('pageshow', function (e) { if (e && e.persisted) reset(); }); } catch (e) {}
   }
-  componentDidMount() { this.__arm(); }
+  componentDidMount() { this.__arm(); const self = this; const rp = () => { self.setState({ rp: true }); setTimeout(() => self.setState({ rp: false }), 40); }; try { document.addEventListener('visibilitychange', function () { if (!document.hidden) rp(); }); window.addEventListener('focus', rp); } catch (e) {} }
   constructor(props) { super(props); this.state = { step: parseInt(props.step || '1', 10) };
     this.__init = Object.assign({}, this.state); }
   renderVals() {
