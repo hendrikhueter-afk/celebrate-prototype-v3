@@ -122,7 +122,7 @@ class Component extends DCLogic {
     const dn = done.join(','), out = {};
     [1, 2, 3, 4].forEach((m) => { out['c' + m] = !fin && m <= d; out['hM' + m] = this.__link('V3-BLA-4b.dc.html', { y: y, m: m, one: 1, d: d, fin: fin ? 1 : '', done: dn }); });
     return Object.assign(out, {
-      hChronik: this.__link('V3-BLA-1.dc.html', { done: done.join(',') }), hShelf: this.__link('V3-BLA-2.dc.html', { done: done.join(',') }),
+      hChronik: this.__link('V3-BLA-1.dc.html', { c: 1, done: done.join(',') }), hShelf: this.__link('V3-BLA-2.dc.html', { done: done.join(',') }),
       badge: String(3 - done.length), hasBadge: done.length < 3,
       y: y, cover: BOOKS[y].c, pos: BOOKS[y].pos,
       isNew: !fin && d === 0, isProg: !fin && d > 0, isFin: fin, startLabel: 'Weiter mit ' + MON[Math.min(11, d)],
