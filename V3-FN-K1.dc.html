@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Celebrate</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#FBF8F4">
+<style>html{height:100%;overflow:hidden;background:#FBF8F4;display:flex;align-items:center;justify-content:center}body{flex:none;width:390px;height:var(--h,844px);overflow:hidden;zoom:var(--z,1)}</style>
+<script>(function(){var lw=0;function f(){var w=innerWidth,h=innerHeight;if(w===lw)return;lw=w;var z=w/390,H=h/z;if(H<640){z=h/640;H=640}var r=document.documentElement.style;r.setProperty("--z",z);r.setProperty("--h",Math.floor(H)+"px")}f();addEventListener("resize",f);addEventListener("orientationchange",function(){lw=0;setTimeout(f,300)})})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&amp;family=Caveat:wght@600;700&amp;family=Cormorant+Garamond:wght@600;700&amp;display=swap">
+<style>
+img{filter:saturate(1.1) brightness(1.12) contrast(1.05)}
+body{margin:0;background:#FFFFFF}
+a{color:#2E1712;text-decoration:none}a:hover{color:#2E1712}
+.scroll{scrollbar-width:none}.scroll::-webkit-scrollbar{display:none}
+.ic{stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block;flex-shrink:0}
+.h1{margin:0;font-size:23px;line-height:28px;font-weight:700;color:#2E1712;letter-spacing:-0.01em}
+.h2{margin:0 0 12px;font-size:19px;line-height:24px;font-weight:700;color:#2E1712}
+.meta{font-size:14px;line-height:19px;color:#7A6259}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 20px;border-radius:999px;background:#4E2018;color:#ffffff;font-weight:700;font-size:16px;border:0;font-family:inherit;cursor:pointer;text-decoration:none;box-sizing:border-box}
+.btn:hover{color:#ffffff}
+.soft{background:#F2F1F0;color:#2E1712}.soft:hover{color:#2E1712}
+.rowb{display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:6px 0;border:0;background:none;font-family:inherit;font-size:15px;color:#2E1712;text-align:left;cursor:pointer;box-sizing:border-box;text-decoration:none}
+.step{width:28px;height:28px;border-radius:50%;border:0;background:#F2F1F0;color:#2E1712;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;font-family:inherit}
+.field{display:block;width:100%;height:52px;padding:0 16px;border-radius:14px;border:1.5px solid #E2D9D6;background:#FFFFFF;box-sizing:border-box;font:inherit;font-size:16px;color:#2E1712;outline:0}
+.field:focus{border:2px solid #4E2018}
+.lbl{display:block;margin:0 0 6px 2px;font-size:13px;line-height:17px;font-weight:500;color:#7A6259}
+.sheet{position:relative;display:block;background:#ffffff;border-radius:2px;box-shadow:0 4px 10px rgba(0,0,0,0.16)}
+.flat{box-shadow:0 6px 14px rgba(0,0,0,0.14)}
+.ring{position:absolute;left:8px;right:8px;top:-3px;height:6px;background-image:radial-gradient(circle,#3A3A3A 1.2px,transparent 1.5px);background-size:7px 6px;background-position:center;z-index:1}
+.dates{position:absolute;display:block;background-image:radial-gradient(circle,#C9C9C9 0.9px,transparent 1.2px);background-size:9px 7px}
+span.ph{position:absolute;display:block;overflow:hidden}span.ph img{width:100%;height:100%;object-fit:cover;display:block}
+img.ph{display:block;width:100%;height:100%;object-fit:cover}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+.pop{animation:pop 420ms cubic-bezier(0.2,0.8,0.2,1) 250ms both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rise{animation:rise 260ms ease-out both}
+@media (prefers-reduced-motion: reduce){.pop,.rise{animation:none}}
+</style>
+</helmet>
+<div style="width: 390px; height: var(--h, 844px); box-sizing: border-box; background: #FFFFFF; color: #2E1712; font-family: 'Rubik', system-ui, sans-serif; position: relative; overflow: hidden">
+<div style="position: absolute; left: 0; right: 0; top: 50px; z-index: 6; height: 56px; padding: 0 14px; display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; background: #FFFFFF"><a href="{{backHref}}" aria-label="Zurück" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #2E1712"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 24px; height: 24px"><path d="M15 5l-7 7 7 7"></path></svg></a><h1 class="h1" style="text-align: center">Kasse</h1><span></span></div>
+<div style="position: absolute; left: 0; right: 0; top: 116px; display: flex; flex-direction: column; align-items: center; gap: 10px"><span aria-hidden="true" style="position: relative; display: block; width: 66px; height: 88.0px; flex-shrink: 0"><span style="position: absolute; left: 0; top: 0; width: 96px; height: 128px; transform: scale(0.6875); transform-origin: 0 0"><span style="position: relative; display: block; width: 96px; height: 128px; border-radius: 1px 2px 2px 1px; overflow: hidden; background: #FBF4EA; box-shadow: 1px 1px 1px rgba(40,28,28,0.10), 3px 5px 10px rgba(40,28,28,0.26)"><span aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 64px; background: repeating-linear-gradient(90deg, #F2C9CD 0 5px, #FBF4EA 5px 10px)"></span><span aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 64px; bottom: 0; background: repeating-linear-gradient(90deg, #DCCB7A 0 5px, #FBF4EA 5px 10px)"></span><span style="position: absolute; left: 0; right: 0; top: 6px; text-align: center; font-family: 'DM Sans', system-ui, sans-serif; font-size: 4.5px; font-weight: 700; letter-spacing: 1px; color: #B4304F">HELLO</span><span style="position: absolute; left: 0; right: 0; top: 11px; text-align: center; font-family: 'Fraunces', Georgia, serif; font-size: 8px; font-style: italic; color: #B4304F">Baby</span><span style="position: absolute; left: 18px; right: 20px; top: 24px; height: 68px; background: #ffffff; padding: 4px; box-sizing: border-box; width: 60px"><span style="display: block; width: 100%; height: 100%; overflow: hidden"><img src="img/62c95a789594ee7ca512fe8877eed8e0.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: 50% 35%"></span></span><span style="position: absolute; left: 4px; right: 0; top: 90px; text-align: center; font-family: 'Fraunces', Georgia, serif; font-size: 16px; line-height: 22px; font-weight: 600; color: #B4304F; z-index: 2">Hanne</span><span style="position: absolute; left: 4px; right: 0; top: 111px; text-align: center; font-family: 'Fraunces', Georgia, serif; font-size: 5.5px; letter-spacing: 0.5px; color: #B4304F">12. März 2025</span><span aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 9px; z-index: 3; background: linear-gradient(to right, rgba(0,0,0,0.10) 0, rgba(0,0,0,0.02) 3px, rgba(255,255,255,0.40) 4px, rgba(255,255,255,0) 5px, rgba(0,0,0,0.07) 5.5px, rgba(0,0,0,0) 9px)"></span><span aria-hidden="true" style="position: absolute; right: 0; top: 0; bottom: 0; width: 4px; z-index: 3; background: linear-gradient(to left, rgba(0,0,0,0.08), rgba(0,0,0,0))"></span><span aria-hidden="true" style="position: absolute; inset: 0; z-index: 3; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.14); border-radius: inherit; pointer-events: none"></span></span></span></span><span style="font-size: 14px; line-height: 19px">{{sum}}</span></div>
+<div style="position: absolute; left: 20px; right: 20px; top: 260px; display: flex; flex-direction: column; gap: 2px">
+<button type="button" class="rowb"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; color: #4E2018"><path d="M3 10.5L12 4l9 6.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-5h4v5"></path></svg><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 500">Anna Berger</span><span class="meta">Lindenstraße 12, 20259 Hamburg</span></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; color: #A8958D"><path d="M9 5l7 7-7 7"></path></svg></button>
+<button type="button" class="rowb"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; color: #4E2018"><path d="M2.5 6h11v10h-11z"></path><path d="M13.5 9.5h4l3.5 3.5v3h-7.5"></path><circle cx="6.5" cy="17.5" r="1.8"></circle><circle cx="17" cy="17.5" r="1.8"></circle></svg><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 500">Kommt am Donnerstag</span></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; color: #A8958D"><path d="M9 5l7 7-7 7"></path></svg></button>
+<button type="button" class="rowb"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; color: #4E2018"><rect x="2.5" y="5" width="19" height="14" rx="2.5"></rect><path d="M2.5 9.5h19"></path><path d="M6 15h4"></path></svg><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 500">Apple Pay</span></span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; color: #A8958D"><path d="M9 5l7 7-7 7"></path></svg></button>
+<sc-if value="{{vClosed}}" hint-placeholder-val="{{ true }}"><button type="button" class="rowb" onClick="{{openV}}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; color: #4E2018"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"></path><path d="M14 6v12" stroke-dasharray="2 2"></path></svg><span style="flex: 1; font-weight: 500">Gutschein</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; color: #A8958D"><path d="M9 5l7 7-7 7"></path></svg></button></sc-if>
+<sc-if value="{{vOpen}}" hint-placeholder-val="{{ false }}"><label class="rise" style="display: flex; align-items: center; gap: 12px; height: 52px; margin-top: 4px; padding: 0 16px; border-radius: 14px; border: 2px solid #4E2018; box-sizing: border-box"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px; color: #4E2018"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"></path><path d="M14 6v12" stroke-dasharray="2 2"></path></svg><input type="text" aria-label="Gutscheincode" placeholder="Gutscheincode" autocomplete="off" style="flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: 16px; color: #2E1712; text-transform: uppercase"></label></sc-if>
+</div>
+<div style="position: absolute; left: 20px; right: 20px; bottom: 106px; display: flex; flex-direction: column; gap: 6px"><div style="display: flex; justify-content: space-between; font-size: 15px; line-height: 20px"><span class="meta" style="font-size: 15px">Versand</span><span>4,95 €</span></div>
+<div style="display: flex; justify-content: space-between; font-size: 17px; line-height: 22px; font-weight: 700"><span>Gesamt</span><span>{{total}}</span></div></div>
+<a href="{{oHref}}" class="btn" style="position: absolute; left: 20px; right: 20px; bottom: 34px">Zahlungspflichtig bestellen</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  __h() { try { return String(window.location.hash || ''); } catch (e) { return ''; } }
+  __hook() { if (this.__hooked) return; this.__hooked = true; const self = this; try { window.addEventListener('hashchange', function () { self.setState({ h: self.__h() }); }); } catch (e) {} }
+  componentDidMount() { this.__hook(); }
+  constructor(props) { super(props); this.state = { h: this.__h(), v: false }; }
+  renderVals() {
+    const m = /q=(\d)/.exec(this.state.h || this.__h());
+    const q = m ? Math.min(9, Math.max(1, parseInt(m[1], 10))) : 1;
+    const eur = (c) => (c / 100).toFixed(2).replace('.', ',') + ' €';
+    return { sum: (q > 1 ? q + ' × ' : '') + 'Hardcover · 21 × 28 cm', total: eur(4999 * q + 495), oHref: 'V3-FN-O1.dc.html#q=' + q, backHref: 'V3-FN-F1.dc.html#q=' + q,
+      vOpen: this.state.v, vClosed: !this.state.v, openV: () => this.setState({ v: true }) };
+  }
+}
+</script>
+</body>
+</html>

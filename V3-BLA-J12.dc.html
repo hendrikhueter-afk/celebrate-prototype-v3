@@ -9,14 +9,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#FBF8F4">
 <style>html{height:100%;overflow:hidden;background:#FBF8F4;display:flex;align-items:center;justify-content:center}body{flex:none;width:390px;height:var(--h,844px);overflow:hidden;zoom:var(--z,1)}</style>
-<script>(function(){var lw=0;function f(){var w=innerWidth,h=innerHeight;if(w===lw)return;lw=w;var z=w/390,H=h/z;if(H<780){z=h/780;H=780}var r=document.documentElement.style;r.setProperty("--z",z);r.setProperty("--h",Math.floor(H)+"px")}f();addEventListener("resize",f);addEventListener("orientationchange",function(){lw=0;setTimeout(f,300)})})();</script>
+<script>(function(){var lw=0;function f(){var w=innerWidth,h=innerHeight;if(w===lw)return;lw=w;var z=w/390,H=h/z;if(H<640){z=h/640;H=640}var r=document.documentElement.style;r.setProperty("--z",z);r.setProperty("--h",Math.floor(H)+"px")}f();addEventListener("resize",f);addEventListener("orientationchange",function(){lw=0;setTimeout(f,300)})})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&amp;display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&amp;display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&amp;family=Permanent+Marker&amp;family=Caveat:wght@600;700&amp;family=Cormorant+Garamond:wght@600;700&amp;display=swap">
 <style>
 img{filter:saturate(1.1) brightness(1.12) contrast(1.05)}
@@ -82,34 +80,58 @@ a{color:#2E1712;text-decoration:none}a:hover{color:#2E1712}
 .tab2.on{color:#2E1712}
 .tab3{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;height:60px;justify-content:center;color:#8C746A;font-size:12px;font-weight:500;text-decoration:none;border:0;background:none;font-family:inherit;cursor:pointer}.tab3.on{color:#2E1712;font-weight:700}.tab3 .ic{stroke-width:1.8}
 .btn{background:#4E2018;color:#ffffff}.btn:hover{color:#ffffff}.btn.soft,.soft{background:#F2F1F0;color:#2E1712}.soft:hover{color:#2E1712}.field.focus{border:2px solid #4E2018}.chip.off{background:#F2F1F0;color:#4E2018}
-.bla-dot{position:absolute;width:12px;height:12px;border-radius:6px;background:#E0533D;box-shadow:0 0 0 2px #ffffff;z-index:4}
 </style>
 </helmet>
-<div style="width: 390px; height: var(--h, 844px); box-sizing: border-box; background: #FFFFFF; color: #2E1712; font-family: 'Rubik', system-ui, sans-serif; position: relative; overflow: hidden"><h1 style="position: absolute; left: 24px; right: 24px; top: 86px; margin: 0; font-size: 30px; line-height: 36px; font-weight: 700; color: #2E1712; text-align: center">{{y}} ist fertig</h1><div aria-label="Unsere Familie {{y}}" style="position: absolute; left: 75px; top: 190px; width: 240px; height: 320px; background: #FFFFFF; border-radius: 4px 10px 10px 4px; box-shadow: 0 22px 44px rgba(46,23,18,0.22); overflow: hidden"><span aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 12px; background: linear-gradient(to right, rgba(0,0,0,0.22), rgba(0,0,0,0))"></span><span style="position: absolute; left: 32px; top: 38px; width: 176px; height: 177px; border-radius: 6px; overflow: hidden"><img src="img/{{cover}}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: {{pos}}"></span><span style="position: absolute; left: 12px; right: 12px; top: 236px; text-align: center; font-size: 20px; line-height: 25px; font-weight: 700; color: #2E1712">Unsere Familie<br>{{y}}</span></div><div style="position: absolute; left: 20px; right: 20px; bottom: 30px; display: flex; flex-direction: column; gap: 10px"><sc-if value="{{hasNext}}" hint-placeholder-val="{{ true }}"><a href="{{hNext}}" style="height: 54px; border-radius: 27px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; background: #4E2018; color: #ffffff">{{nextLabel}}</a><a href="{{hBook}}" style="height: 54px; border-radius: 27px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; background: #F2F1F0; color: #2E1712">Buch ansehen</a></sc-if><sc-if value="{{noNext}}" hint-placeholder-val="{{ false }}"><a href="{{hBook}}" style="height: 54px; border-radius: 27px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; background: #4E2018; color: #ffffff">Buch ansehen</a></sc-if></div></div>
+<div style="position: relative; width: 390px; height: var(--h, 844px); box-sizing: border-box; background: #FFFFFF; color: #2E1712; font-family: 'Rubik', system-ui, sans-serif; overflow: hidden">
+
+  <a href="{{navBack}}" class="ib" aria-label="Zurück" style="position: absolute; left: 16px; top: 52px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px"><path d="M15 5l-7 7 7 7"></path></svg></a>
+  <div aria-label="Schritt 3 von 3" style="position: absolute; left: 0; right: 0; top: 71px; height: 6px; display: flex; justify-content: center; gap: 6px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #D9D5D2"></span><span style="width: 6px; height: 6px; border-radius: 50%; background: #D9D5D2"></span><span style="width: 6px; height: 6px; border-radius: 50%; background: #2E1712"></span></div>
+  <a href="{{navNext}}" style="position: absolute; right: 16px; top: 52px; height: 44px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #8C746A">Später</a>
+
+  <div style="position: absolute; left: 16px; right: 16px; top: 120px; display: flex; flex-direction: column">
+    <h1 class="h0" style="text-align: left">Wer ist das?</h1>
+
+    <div style="position: relative; width: 358px; height: 286px; margin-top: 20px; border-radius: 20px; overflow: hidden; background: #F2F1F0">
+      <img src="img/9f8ac47fc93a6aaa1c39f72464370b8c.jpg" alt="Foto vom 14. Mai 2023" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 26%; display: block">
+      <svg viewBox="0 0 358 286" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 358px; height: 286px; display: block"><path fill-rule="evenodd" fill="#000000" fill-opacity="0.5" d="M0 0H358V286H0Z M168 24a96 96 0 1 0 0.01 0Z"></path><circle cx="168" cy="120" r="94.5" fill="none" stroke="#FFFFFF" stroke-width="3"></circle></svg>
+    </div>
+
+    <div aria-label="Weitere Fotos mit diesem Gesicht" style="display: flex; gap: 8px; margin-top: 12px">
+      <span style="position: relative; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: #F2F1F0"><img src="img/1446f83e88768830627ac5f1888a5be5.jpg" alt="" style="position: absolute; width: 200px; height: 268px; max-width: none; left: -88px; top: -98px; display: block"></span>
+      <span style="position: relative; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: #F2F1F0"><img src="img/588d191243b400c9f631c3d31004f22e.jpg" alt="" style="position: absolute; width: 240px; height: 321px; max-width: none; left: -158px; top: -105px; display: block"></span>
+      <span style="position: relative; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: #F2F1F0"><img src="img/7377610e12c6e9f59de06f4ff0bcfcbc.jpg" alt="" style="position: absolute; width: 218px; height: 292px; max-width: none; left: -70px; top: -132px; display: block"></span>
+      <span style="position: relative; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: #F2F1F0"><img src="img/8ec859b1320e23333a69d2cef3101249.jpg" alt="" style="position: absolute; width: 320px; height: 239px; max-width: none; left: -143px; top: -113px; display: block"></span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 24px; height: {{navGridH}}">
+      <a href="{{navNext}}" class="btn soft" style="justify-content: flex-start; gap: 12px; padding: 0 16px 0 9px"><span class="av" style="background: #FFFFFF">J</span><span>Ich</span></a>
+      <a href="{{navNext}}" class="btn soft" style="justify-content: flex-start; gap: 12px; padding: 0 16px 0 9px"><span class="av" style="background: #FFFFFF">L</span><span>Lukas</span></a>
+      <a href="{{navNext}}" class="btn soft" style="justify-content: flex-start; gap: 12px; padding: 0 16px 0 9px"><span class="av" style="background: #FFFFFF">H</span><span>Hanne</span></a>
+      <a href="{{navNext}}" class="btn soft" style="justify-content: flex-start; gap: 12px; padding: 0 16px 0 9px; display: {{navTheo}}"><span class="av" style="background: #FFFFFF">T</span><span>Theo</span></a>
+      <a href="{{navNext}}" class="btn soft" style="justify-content: flex-start; gap: 12px; padding: 0 16px 0 9px"><span class="av" style="background: #FFFFFF"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; stroke-width: 2.4"><path d="M12 5v14M5 12h14"></path></svg></span><span>Jemand anderes</span></a>
+    </div>
+
+    <div style="display: flex; justify-content: flex-end; margin-top: 8px">
+      <a href="{{navNext}}" class="ib" style="width: auto; padding: 0 9px; font-size: 15px; font-weight: 700; color: #8C746A">Weiß nicht</a>
+    </div>
+  </div>
+</div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = this.__fresh(); }
-  __fresh() { return { hash: String(window.location.hash || '') }; }
-  __hash() { const o = {}; try { String(window.location.hash || '').replace(/^#/, '').split('&').forEach(function (kv) { const i = kv.indexOf('='); if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }); } catch (e) {} return o; }
-  __num(v, d) { const n = parseInt(v, 10); return isNaN(n) ? d : n; }
-  __link(file, o) { const a = []; Object.keys(o).forEach(function (k) { if (o[k] !== undefined && o[k] !== '' && o[k] !== null) a.push(k + '=' + encodeURIComponent(o[k])); }); return file + (a.length ? '#' + a.join('&') : ''); }
-  __done(h) { return String(h.done || '').split(',').filter(function (x) { return x === '2025' || x === '2024' || x === '2023'; }); }
-  __bookLink(y, done) { return done.indexOf(y) >= 0 ? this.__link('V3-BLA-3c.dc.html', { y: y, fin: 1, done: done.join(',') }) : this.__link('V3-BLA-3.dc.html', { y: y, done: done.join(',') }); }
-  __watch() { if (this.__w) return; this.__w = true; const self = this; const again = function () { try { self.setState(self.__fresh()); document.querySelectorAll('.scroll').forEach(function (el) { el.scrollTop = 0; }); } catch (e) {} }; try { window.addEventListener('hashchange', again); window.addEventListener('pageshow', function (e) { if (e && e.persisted) again(); }); } catch (e) {} }
-  componentDidMount() { this.__watch(); }
-  renderVals() {
-    const BOOKS = { '2025': { c: '501ac46f8866bccff28d1ec8b87ea6bc.jpg', pos: '50% 40%' }, '2024': { c: '6e5678ac7a1dcd87114525bf72848dd5.jpg', pos: '50% 45%' }, '2023': { c: '0fc9e8ffe12c81e50839d241ed8f85b2.jpg', pos: '50% 60%' } };
-    const YEARS = ['2025', '2024', '2023'];
-    const MON = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-    const h = this.__hash(), y = BOOKS[h.y] ? h.y : '2025';
-    const done = this.__done(h); if (done.indexOf(y) < 0) done.push(y);
-    const dn = done.join(','), left = YEARS.filter(function (x) { return done.indexOf(x) < 0; });
-    return {
-      y: y, cover: BOOKS[y].c, pos: BOOKS[y].pos, hasNext: left.length > 0, noNext: left.length === 0, nextLabel: 'Weiter mit ' + (left[0] || ''),
-      hNext: this.__link('V3-BLA-3.dc.html', { y: left[0] || y, done: dn }), hBook: this.__link('V3-BLA-3c.dc.html', { y: y, fin: 1, done: dn })
-    };
+  __arm() {
+    if (this.__armed) return; this.__armed = true;
+    const self = this;
+    const reset = () => { try { if (self.__init) self.setState(Object.assign({}, self.__init)); document.querySelectorAll('.scroll').forEach(function (el) { el.scrollTop = 0; }); if (self.__onShow) self.__onShow(); } catch (e) {} };
+    try { let hidden = false; const io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (!e.isIntersecting) { hidden = true; } else if (hidden) { hidden = false; reset(); } }); }); io.observe(document.documentElement); } catch (e) {}
+    try { let w = window.innerWidth; window.addEventListener('resize', function () { const nw = window.innerWidth; if (w === 0 && nw > 0) reset(); w = nw; }); } catch (e) {}
+    try { window.addEventListener('pageshow', function (e) { if (e && e.persisted) reset(); }); } catch (e) {}
   }
+  componentDidMount() { this.__arm(); }
+  __q() { const o = {}; try { String(window.location.hash || '').replace(/^#/, '').split('&').forEach(function (kv) { const i = kv.indexOf('='); if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }); } catch (e) {} return o; }
+  renderVals() { const q = this.__q(), two = q.k === '2', sec = two && q.c === '2';
+    return Object.assign(this.__rv0(), { navBack: 'V3-BLA-J9.dc.html', navNext: 'V3-LM2-ob-moment-d38e.dc.html', navTheo: 'flex', navGridH: '177px' }); }
+  __rv0() { return {}; }
 }
 </script>
 </body>
