@@ -50,7 +50,7 @@ a{color:#2E1712;text-decoration:none}a:hover{color:#2E1712}
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { menu: false }; }
-  componentDidMount() { const go = function () { try { if (window.sessionStorage.getItem('v3kids') && window.sessionStorage.getItem('v3mem') === '1') { window.location.replace('V3-LM2-G7-kb.dc.html'); return true; } } catch (e) {} return false; }; if (go()) return; try { let hidden = false; const io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (!e.isIntersecting) { hidden = true; } else if (hidden) { hidden = false; go(); } }); }); io.observe(document.documentElement); } catch (e) {} try { window.addEventListener('pageshow', function () { go(); }); } catch (e) {} }
+  componentDidMount() { const go = function () { try { if (/\.dc\.html/.test(document.referrer || '') && window.sessionStorage.getItem('v3kids') && window.sessionStorage.getItem('v3mem') === '1') { window.location.replace('V3-LM2-G7-kb.dc.html'); return true; } } catch (e) {} return false; }; if (go()) return; try { let hidden = false; const io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (!e.isIntersecting) { hidden = true; } else if (hidden) { hidden = false; go(); } }); }); io.observe(document.documentElement); } catch (e) {} try { window.addEventListener('pageshow', function () { go(); }); } catch (e) {} }
   renderVals() { const m = this.state.menu; return { menu: m, exp: m ? 'true' : 'false', fabLabel: m ? 'Schließen' : 'Neu', fabRot: m ? 'rotate(45deg)' : 'none', toggle: () => this.setState({ menu: !this.state.menu }) }; }
 }
 </script>
