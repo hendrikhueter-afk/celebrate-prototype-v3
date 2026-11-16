@@ -91,7 +91,7 @@ a{color:#2E1712;text-decoration:none}a:hover{color:#2E1712}
   <div aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 70px; background: linear-gradient(to right, #FFFFFF, rgba(255,255,255,0)); pointer-events: none"></div>
   <div aria-hidden="true" style="position: absolute; right: 0; top: 0; bottom: 0; width: 70px; background: linear-gradient(to left, #FFFFFF, rgba(255,255,255,0)); pointer-events: none"></div>
 </div></div>
-<div style="position: absolute; left: 16px; right: 16px; bottom: 34px"><a href="{{navNext}}" class="btn" role="button" style="width: 100%">Weiter</a></div>
+<div style="position: absolute; left: 16px; right: 16px; bottom: 34px"><a href="{{navNext}}" onClick="{{navSave}}" class="btn" role="button" style="width: 100%">Weiter</a></div>
 </div>
 <script>(function(){var sx=null;document.addEventListener('pointerdown',function(e){var g=e.target.closest&&e.target.closest('[aria-label="Anzahl Kinder"]');sx=g?e.clientX:null;});document.addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;if(Math.abs(dx)<24)return;var g=document.querySelector('[aria-label="Anzahl Kinder"]');if(!g)return;var c=parseInt(g.getAttribute('data-count')||'0',10);var n=dx<0?Math.min(10,c+1):Math.max(0,c-1);var b=g.querySelectorAll('button')[n];if(b){b.click();}});})();</script>
 </x-dc>
@@ -110,7 +110,7 @@ class Component extends DCLogic {
     this.__init = Object.assign({}, this.state); }
   __q() { const o = {}; try { String(window.location.hash || '').replace(/^#/, '').split('&').forEach(function (kv) { const i = kv.indexOf('='); if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }); } catch (e) {} return o; }
   renderVals() { const q = this.__q(), two = q.k === '2', sec = two && q.c === '2';
-    return Object.assign(this.__rv0(), { navNext: this.state.c >= 2 ? 'V3-LM2-ob-04-kb.dc.html#k=2' : 'V3-LM2-ob-04-kb.dc.html' }); }
+    return Object.assign(this.__rv0(), { navNext: this.state.c >= 2 ? 'V3-LM2-ob-04-kb.dc.html#k=2' : 'V3-LM2-ob-04-kb.dc.html', navSave: () => { try { window.sessionStorage.setItem('v3kids', this.state.c >= 2 ? '2' : '1'); window.sessionStorage.removeItem('v3mem'); } catch (e) {} } }); }
   __rv0() {
     const c = this.state.c; const v = { count: String(c), shift: (-c * 96) + 'px' };
     for (let i = 0; i <= 10; i++) { v['on'+i] = i === c ? 'true' : 'false'; v['pick'+i] = () => this.setState({ c: i }); }
