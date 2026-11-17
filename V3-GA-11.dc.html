@@ -56,7 +56,7 @@ img.ph{display:block;width:100%;height:100%;object-fit:cover}
 class Component extends DCLogic {
   __h() { try { return String(window.location.hash || ''); } catch (e) { return ''; } }
   __back() { try { const r = String(document.referrer || '').split('#')[0].split('?')[0].split('/').pop() || ''; if (/\.dc\.html$/.test(r) && r !== 'V3-GA-11.dc.html') { window.sessionStorage.setItem('v3back:V3-GA-11.dc.html', r); } const s = window.sessionStorage.getItem('v3back:V3-GA-11.dc.html'); if (s) return s; } catch (e) {} return 'V3-GA-08.dc.html'; }
-  constructor(props) { super(props); this.state = { h: this.__h(), sc: false, back: this.__back() }; }
+  constructor(props) { super(props); this.state = { h: this.__h(), sc: false, back: this.__back(), bk: {}, sheet: false, toast: '' }; }
   componentDidMount() { const self = this; try { window.addEventListener('hashchange', function () { self.setState({ h: self.__h() }); }); } catch (e) {} try { document.addEventListener('scroll', function (e) { const t = e.target; if (!t || t.nodeType !== 1) return; const sc = t.scrollTop > 48; if (sc !== self.state.sc) self.setState({ sc: sc }); }, true); } catch (e) {} }
   renderVals() {
     const h = this.state.h || this.__h();
